@@ -16,6 +16,11 @@ class SingleList ():
       while current.next:
          current=current.next
       current.next=newNode
+   def display(self):
+      current=self.head
+      while current:
+         print(f"{current.data}",end="->")
+         current=current.next
       
 studentlist=SingleList()
 n=0
@@ -25,3 +30,4 @@ while(n<4):
    student={"name":StudentName,"course":Studentcourse}
    studentlist.insert(student)
    n+=1
+studentlist.display()
