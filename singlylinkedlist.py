@@ -12,15 +12,19 @@ class SingleList ():
       if not self.head:
          self.head=newNode
          return
-      current=self.head
+      current=self.head 
       while current.next:
          current=current.next
       current.next=newNode
+      
+      
    def display(self):
       current=self.head
       while current:
          print(f"{current.data}",end="->")
          current=current.next
+         
+         
    def delete_first(self):
       if not self.head:
          return

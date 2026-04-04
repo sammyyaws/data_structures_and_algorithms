@@ -12,8 +12,24 @@ class singlyList:
         
         if not self.head:
             self.head=newNode
-            
+            return
         current=self.head
-        
+        #traverse to the end of the list
         while current.next:
-                 current=current.next
+             current=current.next
+        current.next=newNode
+        
+    def display(self):
+         current=self.head
+         while current:
+           print(current.data)
+           current=current.next
+           
+           
+#creating a new list
+students=singlyList()
+
+students.insert("john")
+students.insert("doe")
+students.insert("smith")
+students.display()
