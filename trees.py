@@ -40,11 +40,41 @@ class tree:
                 return self.Binsearch(root.left,key)
             else:
                 return self.Binsearch(root.right,key)
-            
-    
-            
-    
-            
+        # find the minimum item 
+        def findMin(self,root):
+            if root is None:
+                return None
+            while root.left:
+                root=root.left
+            return root
+        
+        #find the maximum item
+        def findMax(self,root):
+            if root is None:
+                return None
+            while root.right:
+                root=root.right
+            return root
+        def delete(self,root,key):
+            if root is None:
+                return None
+            if key<root.data:
+                root.left=self.delete(root.left,key)
+            if key>root.data:
+                root.right=self.delete(root.rigth,key)
+            else:  #case where the  node is a leave node
+                 if  root.left and root.right is None:
+                    return None
+                #the case of having a node that is having only one child
+                 if root.left is None:
+                     return root.right
+                 if root.right is None:
+                      return root.left
+                 #case of node 2 childreen
+                 if root.left and root.right is not None:
+                     successor=self.findMin(root.right)
+                     root.data=successor.data
+                     root.right=self.delete(root.right,successor.data)
             
 num=tree()
 num.insert(10)
