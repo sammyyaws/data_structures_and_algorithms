@@ -8,6 +8,10 @@ class tree:
             self.root=None
         def insert(self,data):
           self.root=self.inInsert(self.root,data)
+          
+          
+          
+          
         def inInsert(self,root,data):
             if root is None:
                 return Node(data)
@@ -16,11 +20,14 @@ class tree:
             else:
                 root.right=self.inInsert(root.right,data)
             return root
+        
+        
         def inorder(self,root):
             if root:
              self.inorder(root.left)
              print(root.data)
              self.inorder(root.right)
+              
         def preorder(self,root):
             if root:
                 print(root.data)
@@ -31,6 +38,7 @@ class tree:
                 self.postorder(root.left)
                 self.postorder(root.right)
                 print(root.data)
+                
         def Binsearch(self,root,key):
             if root is None:
                 return
@@ -85,10 +93,10 @@ num.insert(3)
 num.insert(7)
 num.insert(12)
 num.insert(18)
-# num.inorder(num.root)
-# print("preorder")
-# num.preorder(num.root)
-# print("postorder")
+num.inorder(num.root)
+print("preorder")
+num.preorder(num.root)
+print("postorder")
 # num.postorder(num.root)
 print(num.Binsearch(num.root,7))
 
